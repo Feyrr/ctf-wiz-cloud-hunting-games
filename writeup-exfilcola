@@ -1,0 +1,22 @@
+Challenge 1:
+SELECT * FROM s3_data_events
+SELECT * FROM s3_data_events WHERE UserAgent LIKE '%boto3%' OR UserAgent LIKE '%aws-cli%'
+SELECT * FROM s3_data_events where path like '%recipe%' and eventname like 'GetObject'
+
+Challenge 2:
+SELECT * FROM cloudtrail WHERE UserAgent LIKE '%aws-cli/2.23.2 md/awscrt#0.23.4 ua/2.0 os/macos#23.6.0%'
+
+Challenge 3:
+SELECT * FROM cloudtrail WHERE userIdentity_ARN LIKE '%Moe%'
+SELECT * FROM cloudtrail WHERE userIdentity_ARN LIKE '%Jito%'
+arn:aws:sts::509843726190:assumed-role/lambdaWorker # susp lambda function
+
+Challenge 4:
+umount /var/log/
+bash_history
+find /tmp /home /opt /etc -type f -exec grep -aE '8443|ncat|ssl|log-service-status' {} + 2>/dev/null
+grep -rhoE '([0-9]{1,3}\.){3}[0-9]{1,3}' / --exclude-dir={proc,sys,dev,var,run,tmp} 2>/dev/null | sort | uniq -c | sort -nr
+
+Challenge 5:
+curl -u FizzShadows_1:Gx27pQwz92Rk http://34.118.239.100/files
+curl -u FizzShadows_1:Gx27pQwz92Rk -X DELETE http://34.118.239.100/files/ExfilCola-Top-Secret.txt
